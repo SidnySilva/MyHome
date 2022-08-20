@@ -31,22 +31,22 @@ export const Cards = (project: Infos) => {
             {project.link[0] === "" ? (
               <>
                 <p>
-                  Github: <a href={project.link[1]}>link Github</a>
+                  <a href={project.link[1]}>Link Github</a>
                 </p>
               </>
             ) : (
               <>
                 <p>
-                  Project: <a href={project.link[0]}>Link versel</a>
+                  <a href={project.link[0]}>Link Project</a>
                   <br />
-                  Github: <a href={project.link[1]}>link Github</a>
+                  <a href={project.link[1]}>Link Github</a>
                 </p>
               </>
             )}
           </div>
           <div className='engines'>
             {engines.map((el, i) => (
-              <img key={i} src={el} alt={`${el} Logo`} />
+              <img key={`img-${i}`} src={el} alt={`${el} Logo`} />
             ))}
           </div>
         </div>

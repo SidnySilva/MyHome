@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Buttons } from "./styles";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Popup } from "../popup";
+import { Buttons, SandButton } from "./styles";
 
 interface ButtonProps {
   text: string;
@@ -14,5 +15,21 @@ export const Button = (children: ButtonProps) => {
     <Buttons onClick={() => navigate(`/${children.page}`)}>
       {children.text}
     </Buttons>
+  );
+};
+
+export const SandwishButton = () => {
+  const [popup, setPopup] = useState(false);
+
+  const changePopup = () => {
+    popup ? setPopup(false) : setPopup(true);
+  };
+  return (
+    <SandButton onClick={() => changePopup()}>
+      <hr></hr>
+      <hr></hr>
+      <hr></hr>
+      {popup ? <Popup /> : <></>}
+    </SandButton>
   );
 };

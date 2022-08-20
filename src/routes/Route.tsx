@@ -1,5 +1,4 @@
-import { ComponentType } from "react";
-import { Routes, Route, RouteProps } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { AboutMe } from "../components/aboutMe";
 import { Projects } from "../components/Projects";
 import { Games } from "../components/games";

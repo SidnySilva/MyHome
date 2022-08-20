@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
-  z-index: 2;
+export const Container = styled.header`
+  z-index: 4;
   background-color: black;
   display: flex;
   justify-content: space-between;
@@ -9,11 +9,19 @@ export const Container = styled.section`
   width: 100vw;
 `;
 export const ButtonContainer = styled.div`
-  width: 40%;
+  width: 15%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   button {
-    margin: 0 2rem;
+    margin: 0;
+  }
+
+  @media (min-width: 1000px) {
+    width: 30%;
+    button {
+      margin: 0 2rem;
+    }
   }
 `;
 export const Perfil = styled.div`

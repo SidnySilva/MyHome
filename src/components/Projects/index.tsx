@@ -47,6 +47,7 @@ export const Projects = () => {
       <Container>
         {array.map((el, i) => (
           <Cards
+            key={`cards-${i}`}
             id={i}
             projectPicture={el.projectPicture}
             projectName={el.projectName}

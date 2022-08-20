@@ -106,7 +106,7 @@ export const AboutMe = () => {
               <span>+55 (11)95135-7307</span>
             </div>
             <div>
-              <img src={linkedin} alt='LinkedIn Logo' />
+              <img className='linkedin' src={linkedin} alt='LinkedIn Logo' />
               <a
                 target='blank'
                 href='https://www.linkedin.com/in/sidny-silva-a62829155/'>
