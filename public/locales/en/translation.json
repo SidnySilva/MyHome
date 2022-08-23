@@ -1,0 +1,36 @@
+{
+  "Projects": {
+    "1": "Projects"
+  },
+  "Games": {
+    "1": "Games",
+    "2": "My first contact with programming was in 2019, starting with Digital game development. At this stage, I started coding in C# and that was the moment i learned about .NET and OOP (Object Oriented Programming), all of this in unity.",
+    "3": "In Button bellow you can take a look and play some games that i created."
+  },
+  "AboutMe": {
+    "1": "About me"
+  },
+  "BioDescription": {
+    "1": "I'm a very high-spirited person, I like to make things always fun and comfortable for all around me, I also like to learn always more, so when someone shows me a new tool, frameworks, new programming languages or new contents I always give my attention, because all knowledge will be welcome. Sinse I was a child I love technology and I have always been facinated about this world. At first I wanted to work with robots, until I found the programming area and ended up enjoying using code much more. My first contact with programming was in 2019 with digital game development, but I went deeper in 2021 when I started studying at ",
+    "2": ". Today I am a Full-stack web developer and I intend to continue growing and improving my knowledge."
+  },
+  "CvDescription": {
+    "1": "Experience",
+    "2": "Kenzie Academy Brazil - Faciltator jr",
+    "3": "02/2022 - 08/2022",
+    "4": "Monitoring students in the learning process of Front-end Development technologies: HTML, CSS, JavaScript e React; Leadership of teams of monitors in order to direct them to give the best assistance to the devs. Back-end helped to create APIs using NodeJs and Prisma.",
+    "5": "Formation",
+    "6": "Kenzie Academy Brazil - Full-Stack web Development",
+    "7": "07/2021 - 07/2022, REMOTE",
+    "8": "Senac - Digital game development",
+    "9": "09/2019 - 09/2021, LOCAL",
+    "10": "Summary of qualifications",
+    "11": "My relationship with technology started in 2019 and since then I've been looking to learn and evolve more and more in this area because it's what I really like to do. My goal is to work as a full-stack developer and grow more and more in the area.",
+    "12": "I have knowledge in:",
+    "13": "agile methodologies",
+    "14": "Languages: Portuguese-br native and English advanced"
+  },
+  "Contacts": {
+    "1": "Contacts"
+  }
+}

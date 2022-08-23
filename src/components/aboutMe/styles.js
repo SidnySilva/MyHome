@@ -173,7 +173,11 @@ export const Contact = styled.footer`
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      align-items: center;
       font-size: 24px;
+      h2 {
+        margin-left: 2rem;
+      }
       div {
         align-self: center;
         width: 100%;

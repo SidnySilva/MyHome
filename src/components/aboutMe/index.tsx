@@ -4,12 +4,15 @@ import linkedin from "../../assets/linkedin.png";
 import gmail from "../../assets/gmail.png";
 import git from "../../assets/github.png";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const AboutMe = () => {
   const [option, setOption] = useState("");
+  const { t } = useTranslation();
+
   return (
     <Container>
-      <h1>Sobre mim!</h1>
+      <h1>{t("AboutMe.1")}!</h1>
       <div className='options'>
         <button
           onClick={() => {
@@ -27,37 +30,26 @@ export const AboutMe = () => {
       {option === "exp" ? (
         <Cv>
           <div className='exp'>
-            <h2>Experiência</h2>
-            <p>Kenzie Academy Brasil - Faciltador jr</p>
-            <span>02 DE 2022 - 08 DE 2022</span>
-            <p>
-              Acompanhamento de alunos no processo de aprendizagem de
-              tecnologias de Desenvolvimento Front-end: HTML, CSS, Javascript e
-              React; Liderança de equipes de monitores a fim de direcioná-los a
-              dar o melhor auxílio para os devs em formação. Back-end auxiliava
-              na criação de APIs utilizando NodeJS e Prisma.
-            </p>
+            <h2>{t("CvDescription.1")}</h2>
+            <p>{t("CvDescription.2")}</p>
+            <span>{t("CvDescription.3")}</span>
+            <p>{t("CvDescription.4")}</p>
           </div>
           <div className='form'>
-            <h2>Formação</h2>
+            <h2>{t("CvDescription.5")}</h2>
             <p>
-              Kenzie Academy Brasil - Desenvolvimento Web Fullstack
-              <span>07 DE 2021 - 07 DE 2022, REMOTO</span>
+              {t("CvDescription.6")}
+              <p>{t("CvDescription.7")}</p>
             </p>
             <p>
-              Senac - Desenvolvimento de jogos digitais
-              <span>09 DE 2019 - 09 DE 2021, LOCAL</span>
+              {t("CvDescription.8")}
+              <p>{t("CvDescription.9")}</p>
             </p>
           </div>
           <div className='quali'>
-            <h2>Síntese das qualificações</h2>
-            <p>
-              Minha relação com a tecnologia começou em 2019 e desde de lá venho
-              buscando aprender e evoluir cada vez mais nessa área porque é o
-              que realmente gosto de fazer. Meu objetivo é trabalhar como
-              full-stack developer e crescer cada vez mais na área.
-            </p>
-            <p>Tenho conhecimentos em:</p>
+            <h2>{t("CvDescription.10")}</h2>
+            <p>{t("CvDescription.11")}</p>
+            <p>{t("CvDescription.12")}</p>
             <p>
               Front-end: HTML, CSS, C#, .NET, JavaScript, Typescript, React,
               Redux
@@ -66,35 +58,25 @@ export const AboutMe = () => {
               Back-end: Python, Flask, Node, Prisma, TypeORM, SQL, PostgreSQL,
               docker
             </p>
-            <p>Metodologias ágeis: Scrum, Kanban</p>
-            <p>Idiomas:Português nativo e Inglês avançado </p>
+            <p>{t("CvDescription.13")}: Scrum, Kanban</p>
+            <p>{t("CvDescription.14")} </p>
           </div>
         </Cv>
       ) : (
         <Me>
           <h2>Bio</h2>
           <p>
-            Sou uma pessoa muito alto astral, gosto de deixar as coisas sempre
-            animadas e confortáveis para todos ao meu redor, também gosto de
-            aprender sempre mais, então quando me mostram ferramentas,
-            frameworks, novas linguagens ou novos conteúdos eu sempre dou a
-            devida atenção pois todo conhecimento sempre sera bem vindo. Desde
-            de pequeno gosto muito de tecnologia e sempre fui fascinado por esse
-            mundo, a principio eu queria trabalhar com robótica, ate que entrei
-            na área de programação e acabei gostando muito mais de mexer com os
-            software. Meu primeiro contato foi com programação de jogos digitais
-            em 2019, mas me aprofundei na área em 2021 quando entrei na
+            {t("BioDescription.1")}
             <> </>
             <a
               target='blank'
               href='https://kenzie.com.br/?trk_src=x&trk_cmp=18000265428&trk_grp=&trk_ad=&trk_kw=&utm_term=&utm_campaign=CAP-M0AC11-MAX&utm_source=adwords&utm_medium=ppc&hsa_acc=2166776305&hsa_cam=18000265428&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwxveXBhDDARIsAI0Q0x3ldv7MuZjrJy_fU5obEEBGjDxW00aNusbcnHEHqXIaskz9OYX-gscaAr7tEALw_wcB'>
               Kenzie Academy Brasil
             </a>
-            . Hoje sou um desenvolvedor web Full-stack e pretendo continuar
-            crescendo e aprimorando meus conhecimentos.
+            {t("BioDescription.2")}
           </p>
           <Contact>
-            <h2>Contatos: </h2>
+            <h2>{t("Contacts.1")}: </h2>
             <div>
               <img className='git' src={git} alt='Github Logo' />
               <a target='blank' href='https://github.com/SidnySilva'>

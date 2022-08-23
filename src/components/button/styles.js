@@ -17,6 +17,26 @@ export const Buttons = styled.button`
   }
 `;
 
+export const ButtonLanguage = styled.button`
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  transition: 1s;
+  img {
+    min-width: 100%;
+    height: 50px;
+    border-radius: 50%;
+  }
+  :hover {
+    transition: 0.2s;
+    border-color: green;
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 90px cyan;
+  }
+`;
 export const SandButton = styled.button`
   background-color: transparent;
   border: none;

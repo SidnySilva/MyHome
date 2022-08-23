@@ -1,4 +1,4 @@
-import { compareEngines } from "../../utils";
+import { compareEngines } from "../../utils/engines";
 import { Container } from "./styles";
 
 interface Infos {
@@ -14,6 +14,7 @@ interface Infos {
 
 export const Cards = (project: Infos) => {
   const engines = compareEngines(project.engines);
+  console.log("nome", project.projectName);
 
   return (
     <Container key={`card-${project.id}`}>

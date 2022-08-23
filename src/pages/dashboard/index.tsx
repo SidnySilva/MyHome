@@ -5,7 +5,6 @@ export const Dashboard = () => {
   return (
     <>
       <Header />
-      <Projects />
     </>
   );
 };

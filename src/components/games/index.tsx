@@ -1,19 +1,15 @@
 import { Container } from "./styles";
+import { useTranslation } from "react-i18next";
 
 export const Games = () => {
+  const { t } = useTranslation();
+
   return (
     <Container>
-      <h1>Games</h1>
+      <h1>{t("Games.1")}</h1>
       <div className='info'>
-        <p className='text'>
-          Meu primeiro contato com a programação foi em 2019 iniciando com
-          programação de jogos digitais. Nesta fase, iniciei codando em C# e foi
-          nesse momento onde aprendi sobre .NET e programação orientada a
-          objetos, isso, utilizando a engine Unity.
-        </p>
-        <p>
-          No botão abaixo você poderá visualizar e jogar alguns jogos que criei.
-        </p>
+        <p className='text'>{t("Games.2")}</p>
+        <p>{t("Games.3")}</p>
       </div>
       <button>
         <a href='https://sodyy.itch.io/' target='blank'>

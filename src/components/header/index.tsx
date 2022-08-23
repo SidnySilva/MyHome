@@ -1,7 +1,10 @@
 import { ButtonContainer, Container, Figure, Perfil } from "./styled";
-import ProfileFoto from "../../assets/Eu.jpg";
-import { Button, SandwishButton } from "../button";
+import { Button, ButtonLang, SandwishButton } from "../button";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import ProfileFoto from "../../assets/Eu.jpg";
+import Br from "../../assets/brazil.png";
+import Us from "../../assets/us.png";
 
 export const Header = () => {
   const [wide, setWide] = useState(0);
@@ -9,6 +12,11 @@ export const Header = () => {
     setWide(window.innerWidth);
   });
 
+  const { t, i18n } = useTranslation();
+
+  const handleClick = (language: string) => {
+    i18n.changeLanguage(language);
+  };
   return (
     <Container>
       <Perfil>
@@ -20,9 +28,11 @@ export const Header = () => {
       <ButtonContainer>
         {window.innerWidth > 1000 ? (
           <>
-            <Button page={"projects"} text={"Projetos"} />
-            <Button page={"games"} text={"games"} />
-            <Button page={"aboutMe"} text={"Sobre mim"} />
+            <ButtonLang img={Us} onClick={() => handleClick("en")} />
+            <ButtonLang img={Br} onClick={() => handleClick("pt")} />
+            <Button page={"projects"} text={t("Projects.1")} />
+            <Button page={"games"} text={t("Games.1")} />
+            <Button page={"aboutMe"} text={t("AboutMe.1")} />
           </>
         ) : (
           <>

@@ -1,0 +1,36 @@
+{
+  "Projects": {
+    "1": "Projetos"
+  },
+  "Games": {
+    "1": "Jogos",
+    "2": "Meu primeiro contato com a programação foi em 2019 iniciando com programação de jogos digitais. Nesta fase, iniciei codando em C# e foi nesse momento onde aprendi sobre .NET e programação orientada a objetos, isso, utilizando a engine Unity.",
+    "3": "No botão abaixo você poderá visualizar e jogar alguns jogos que criei."
+  },
+  "AboutMe": {
+    "1": "Sobre mim"
+  },
+  "BioDescription": {
+    "1": "Sou uma pessoa muito alto astral, gosto de deixar as coisas sempre animadas e confortáveis para todos ao meu redor, também gosto de aprender sempre mais, então quando me mostram ferramentas, frameworks, novas linguagens ou novos conteúdos eu sempre dou a devida atenção pois todo conhecimento sempre sera bem vindo. Desde de pequeno gosto muito de tecnologia e sempre fui fascinado por esse mundo. A principio eu queria trabalhar com robótica, ate que entrei na área de programação e acabei gostando muito mais de mexer com os software. Meu primeiro contato foi com programação de jogos digitais em 2019, mas me aprofundei na área em 2021 quando entrei na ",
+    "2": ". Hoje sou um desenvolvedor web Full-stack e pretendo continuar crescendo e aprimorando meus conhecimentos."
+  },
+  "CvDescription": {
+    "1": "Experiência",
+    "2": "Kenzie Academy Brasil - Faciltador jr",
+    "3": "02 DE 2022 - 08 DE 2022",
+    "4": "Acompanhamento de alunos no processo de aprendizagem de tecnologias de Desenvolvimento Front-end: HTML, CSS, Javascript e React; Liderança de equipes de monitores a fim de direcioná-los a dar o melhor auxílio para os devs em formação. Back-end auxiliava na criação de APIs utilizando NodeJS e Prisma.",
+    "5": "Formação",
+    "6": " Kenzie Academy Brasil - Desenvolvimento Web Fullstack",
+    "7": "07 DE 2021 - 07 DE 2022, REMOTO",
+    "8": "Senac - Desenvolvimento de jogos digitais",
+    "9": "09 DE 2019 - 09 DE 2021, LOCAL",
+    "10": "Síntese das qualificações",
+    "11": " Minha relação com a tecnologia começou em 2019 e desde de lá venho buscando aprender e evoluir cada vez mais nessa área porque é o que realmente gosto de fazer. Meu objetivo é trabalhar como full-stack developer e crescer cada vez mais na área.",
+    "12": "Tenho conhecimentos em:",
+    "13": "Metodologias ágeis",
+    "14": "Idiomas:Português nativo e Inglês avançado"
+  },
+  "Contacts": {
+    "1": "Contatos"
+  }
+}

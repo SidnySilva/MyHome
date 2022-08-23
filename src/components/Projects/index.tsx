@@ -1,63 +1,54 @@
 import { Cards } from "../cards";
 import { Container } from "./styles";
-import redux from "../../assets/redux.png";
-import styled from "../../assets/styled.png";
-import ts from "../../assets/typescript.png";
+
+import { useCallback, useEffect, useState } from "react";
+import { api } from "../../services/api";
+
+interface IProjects {
+  projectPicture: string;
+  projectName: string;
+  projectType: string;
+  date: string;
+  link: string;
+  description: string;
+  engines: string;
+}
+
 export const Projects = () => {
-  const array = [
-    {
-      projectPicture: redux,
-      projectName: "Project Name",
-      projectType: "project Type",
-      date: "29/07/1999",
-      link: ["", "git"],
-      description: "Description",
-      engines: ["js", "node"],
-    },
-    {
-      projectPicture: styled,
-      projectName: "Project Name",
-      projectType: "project Type",
-      date: "29/07/1999",
-      link: ["project", "git"],
-      description: "Description",
-      engines: ["js", "node", "prisma", "react", "redux", "ts", "chakra"],
-    },
-    {
-      projectPicture: ts,
-      projectName: "Project Name",
-      projectType: "project Type",
-      date: "29/07/1999",
-      link: ["project", "git"],
-      description: "Description",
-      engines: ["js", "python", "react", "ts", "chakra"],
-    },
-    {
-      projectPicture: ts,
-      projectName: "Project Name",
-      projectType: "project Type",
-      date: "29/07/1999",
-      link: ["project", "git"],
-      description: "Description",
-      engines: ["node", "prisma", "react", "redux", "ts"],
-    },
-  ];
+  const [teste, setTeste] = useState<any>([]);
+  const [start, setStart] = useState(true);
+
+  const req = useCallback(async () => {
+    const response = await api.get("projects");
+    setTeste(response.data);
+  }, []);
+
+  if (start) {
+    req();
+    setStart(false);
+  }
+
+  console.log(teste);
   return (
     <>
       <Container>
-        {array.map((el, i) => (
-          <Cards
-            key={`cards-${i}`}
-            id={i}
-            projectPicture={el.projectPicture}
-            projectName={el.projectName}
-            projectType={el.projectType}
-            date={el.date}
-            link={el.link}
-            description={el.description}
-            engines={el.engines}
-          />
-        ))}
+        {teste.length !== 0 ? (
+          teste.map(({ el, i }: any) => (
+            <Cards
+              key={`cards-${i}`}
+              id={i}
+              projectPicture={el.imageLink}
+              projectName={el.name}
+              projectType={el.type}
+              date={el.date}
+              link={el.links}
+              description={el.description}
+              engines={el.engines}
+            />
+          ))
+        ) : (
+          <></>
+        )}
       </Container>
     </>
   );

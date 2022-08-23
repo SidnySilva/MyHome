@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Popup } from "../popup";
-import { Buttons, SandButton } from "./styles";
+import { ButtonLanguage, Buttons, SandButton } from "./styles";
 
 interface ButtonProps {
   text: string;
@@ -31,5 +31,18 @@ export const SandwishButton = () => {
       <hr></hr>
       {popup ? <Popup /> : <></>}
     </SandButton>
+  );
+};
+
+interface Lang {
+  img: string;
+  onClick: () => void;
+}
+
+export const ButtonLang = (children: Lang) => {
+  return (
+    <ButtonLanguage onClick={children.onClick}>
+      <img src={children.img} alt='' />
+    </ButtonLanguage>
   );
 };

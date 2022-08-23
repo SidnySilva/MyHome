@@ -43,7 +43,9 @@ export const Container = styled.section`
       animation: ${opacity} 2s;
     }
   }
-
+  div button {
+    margin: 0 1rem;
+  }
   @media (min-width: 500px) {
     width: 30vw;
   }
