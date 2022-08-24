@@ -1,10 +1,11 @@
 import { compareEngines } from "../../utils/engines";
 import { Container } from "./styles";
+import { useTranslation } from "react-i18next";
 
 interface Infos {
   projectPicture: string;
   projectName: string;
-  description: string;
+  description: string[];
   projectType: string;
   date: string;
   link: string[];
@@ -14,33 +15,42 @@ interface Infos {
 
 export const Cards = (project: Infos) => {
   const engines = compareEngines(project.engines);
-  console.log("nome", project.projectName);
-
+  const { i18n } = useTranslation();
   return (
     <Container key={`card-${project.id}`}>
-      <div>
+      <div className='foto'>
         <img src={project.projectPicture} alt={`logo ${project.projectName}`} />
       </div>
       <div className='info'>
         <h1>
           {project.projectName} - {project.projectType}
         </h1>
-        <p className='desc'>{project.description}</p>
+        <p className='desc'>
+          {i18n.language === "pt"
+            ? project.description[0]
+            : project.description[1]}
+        </p>
         <p className='data'>{project.date}</p>
         <div className='footer'>
           <div className='links'>
-            {project.link[0] === "" ? (
+            {project.link.length === 1 ? (
               <>
                 <p>
-                  <a href={project.link[1]}>Link Github</a>
+                  <a target='_blank' rel='noreferrer' href={project.link[0]}>
+                    Link Github
+                  </a>
                 </p>
               </>
             ) : (
               <>
                 <p>
-                  <a href={project.link[0]}>Link Project</a>
+                  <a target='_blank' rel='noreferrer' href={project.link[0]}>
+                    Link Project
+                  </a>
                   <br />
-                  <a href={project.link[1]}>Link Github</a>
+                  <a target='_blank' rel='noreferrer' href={project.link[1]}>
+                    Link Github
+                  </a>
                 </p>
               </>
             )}

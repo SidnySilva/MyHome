@@ -20,10 +20,7 @@ export const Header = () => {
   return (
     <Container>
       <Perfil>
-        <Figure>
-          <img className='img' src={ProfileFoto} alt='Foto do Sidny' />
-        </Figure>
-        <h1>Sidny Silva</h1>
+        <h1>My Home</h1>
       </Perfil>
       <ButtonContainer>
         {window.innerWidth > 1000 ? (

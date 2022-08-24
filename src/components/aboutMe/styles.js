@@ -82,8 +82,9 @@ export const Cv = styled.section`
   animation: ${animate} 1s;
   overflow-y: scroll;
   width: 90vw;
-  max-height: 80%;
+  max-height: 70%;
   padding-bottom: 10px;
+  font-size: 16px;
   ::-webkit-scrollbar-track {
     background: transparent;
   }
@@ -99,6 +100,7 @@ export const Cv = styled.section`
   }
   @media (min-width: 800px) {
     width: 50vw;
+    font-size: 24px;
   }
 `;
 
@@ -109,8 +111,12 @@ export const Me = styled.section`
   justify-content: space-between;
   align-items: center;
   overflow-y: scroll;
-  height: 100%;
+  height: 80%;
   width: 90vw;
+
+  p {
+    font-size: 16px;
+  }
   ::-webkit-scrollbar-track {
     background: transparent;
   }
@@ -128,6 +134,9 @@ export const Me = styled.section`
     font-size: 28px;
     height: 100%;
     width: 50vw;
+    p {
+      font-size: 24px;
+    }
   }
 `;
 

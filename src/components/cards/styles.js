@@ -23,18 +23,21 @@ export const Container = styled.div`
   min-width: 300px;
   gap: 3px;
   color: white;
-  height: 80%;
+  max-height: 80%;
   margin-top: 10px;
   animation: ${animate} 1s;
   :nth-child(even) {
     animation: ${animate} 1s;
   }
+  .foto {
+    display: flex;
+    overflow: hidden;
+  }
   img {
     padding-top: 10px;
     align-self: center;
-    border-radius: 10px;
     width: 100%;
-    height: 150px;
+    height: 100%;
   }
   .info {
     width: 100%;
@@ -57,11 +60,15 @@ export const Container = styled.div`
     align-self: flex-end;
     margin: 10px 10px 10px 0;
   }
-
+  .desc {
+    overflow-y: scroll;
+    max-height: 100px;
+  }
   .footer {
     display: flex;
     width: 90%;
     height: 100px;
+    padding-bottom: 10px;
     justify-content: space-between;
     align-items: center;
   }
@@ -69,6 +76,8 @@ export const Container = styled.div`
   .engines {
     display: flex;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: 40px;
     width: 50%;
     gap: 10px;
     img {
@@ -78,13 +87,15 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 800px) {
+  @media (min-width: 1000px) {
     flex-direction: row;
+    justify-content: space-between;
     width: 50vw;
     img {
-      border-radius: 10px 0 0 10px;
-      width: 250px;
-      height: 300px;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
     }
     .info {
       justify-content: space-evenly;

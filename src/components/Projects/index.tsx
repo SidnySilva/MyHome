@@ -1,54 +1,71 @@
 import { Cards } from "../cards";
-import { Container } from "./styles";
-
-import { useCallback, useEffect, useState } from "react";
+import { Container, FilterButton } from "./styles";
+import { useEffect, useState } from "react";
 import { api } from "../../services/api";
+import { useTranslation } from "react-i18next";
 
-interface IProjects {
-  projectPicture: string;
-  projectName: string;
-  projectType: string;
+interface IProject {
+  imageLink: string;
+  name: string;
+  type: string;
   date: string;
-  link: string;
-  description: string;
-  engines: string;
+  description: string[];
+  links: string[];
+  engines: string[];
+  project_id: string;
 }
 
 export const Projects = () => {
-  const [teste, setTeste] = useState<any>([]);
-  const [start, setStart] = useState(true);
+  const [projects, setProjects] = useState<IProject[]>([]);
+  const [filteredProjects, setFilteredProjects] = useState<IProject[]>([]);
+  const [filter, setFilter] = useState("x");
 
-  const req = useCallback(async () => {
-    const response = await api.get("projects");
-    setTeste(response.data);
+  const { t } = useTranslation();
+  useEffect(() => {
+    api
+      .get("projects")
+      .then((res) => setProjects(res.data))
+      .catch((err) => console.log(err));
   }, []);
 
-  if (start) {
-    req();
-    setStart(false);
-  }
-
-  console.log(teste);
+  useEffect(() => {
+    if (filter !== "") {
+      setFilteredProjects(projects.filter((el) => el.type === filter));
+    } else {
+      setFilteredProjects(projects);
+    }
+  }, [filter]);
   return (
     <>
       <Container>
-        {teste.length !== 0 ? (
-          teste.map(({ el, i }: any) => (
-            <Cards
-              key={`cards-${i}`}
-              id={i}
-              projectPicture={el.imageLink}
-              projectName={el.name}
-              projectType={el.type}
-              date={el.date}
-              link={el.links}
-              description={el.description}
-              engines={el.engines}
-            />
-          ))
-        ) : (
-          <></>
-        )}
+        <div className='buttonHolder'>
+          <FilterButton onClick={() => setFilter("Front-end")}>
+            Front-end
+          </FilterButton>
+          <FilterButton onClick={() => setFilter("Back-end")}>
+            Back-end
+          </FilterButton>
+          <FilterButton onClick={() => setFilter("Full-Stack")}>
+            Full-Stack
+          </FilterButton>
+          <FilterButton onClick={() => setFilter("")}>
+            {t("All.1")}
+          </FilterButton>
+        </div>
+
+        {filteredProjects?.map((el: any) => (
+          <Cards
+            key={`cards-${el.project_id}`}
+            id={el.project_id}
+            projectPicture={el?.imageLink}
+            projectName={el?.name}
+            projectType={el?.type}
+            date={el?.date}
+            link={el?.links}
+            description={el?.description}
+            engines={el?.engines}
+          />
+        ))}
       </Container>
     </>
   );
