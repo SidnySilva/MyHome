@@ -37,7 +37,7 @@ export const ButtonLanguage = styled.button`
     box-shadow: 0 0 90px cyan;
   }
 `;
-export const SandButton = styled.button`
+export const SandButton = styled.div`
   background-color: transparent;
   border: none;
   width: 50px;

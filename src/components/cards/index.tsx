@@ -1,6 +1,7 @@
 import { compareEngines } from "../../utils/engines";
 import { Container } from "./styles";
 import { useTranslation } from "react-i18next";
+import { changeDateFormat } from "../../utils/dateFormat";
 
 interface Infos {
   projectPicture: string;
@@ -16,6 +17,7 @@ interface Infos {
 export const Cards = (project: Infos) => {
   const engines = compareEngines(project.engines);
   const { i18n } = useTranslation();
+
   return (
     <Container key={`card-${project.id}`}>
       <div className='foto'>
@@ -30,7 +32,11 @@ export const Cards = (project: Infos) => {
             ? project.description[0]
             : project.description[1]}
         </p>
-        <p className='data'>{project.date}</p>
+        <p className='data'>
+          {i18n.language === "pt"
+            ? project.date
+            : changeDateFormat(project.date)}
+        </p>
         <div className='footer'>
           <div className='links'>
             {project.link.length === 1 ? (

@@ -15,15 +15,16 @@ export const Container = styled.div`
   display: flex;
   z-index: 1;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: #111;
   border: 4px solid black;
   border-radius: 10px;
-  min-width: 300px;
   gap: 3px;
   color: white;
-  max-height: 80%;
+  min-width: 300px;
+  min-height: 95%;
+  max-height: 95%;
   margin-top: 10px;
   animation: ${animate} 1s;
   :nth-child(even) {
@@ -31,12 +32,14 @@ export const Container = styled.div`
   }
   .foto {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 250px;
     overflow: hidden;
   }
   img {
-    padding-top: 10px;
-    align-self: center;
-    width: 100%;
+    width: 100vw;
     height: 100%;
   }
   .info {
@@ -48,6 +51,7 @@ export const Container = styled.div`
     justify-content: space-between;
     .desc {
       font-size: 18px;
+      width: 80%;
     }
     h1 {
       margin: 20px 0 20px 0;
@@ -91,11 +95,17 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 50vw;
+    min-height: 50%;
+
     img {
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
+      border-radius: 5px 0 0 5px;
+    }
+    .foto {
+      width: 300px;
+      height: 100%;
     }
     .info {
       justify-content: space-evenly;

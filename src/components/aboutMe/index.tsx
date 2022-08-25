@@ -39,11 +39,13 @@ export const AboutMe = () => {
             <h2>{t("CvDescription.5")}</h2>
             <p>
               {t("CvDescription.6")}
-              <p>{t("CvDescription.7")}</p>
+              <br />
+              {t("CvDescription.7")}
             </p>
             <p>
               {t("CvDescription.8")}
-              <p>{t("CvDescription.9")}</p>
+              <br />
+              {t("CvDescription.9")}
             </p>
           </div>
           <div className='quali'>

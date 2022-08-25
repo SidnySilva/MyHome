@@ -45,7 +45,7 @@ const animate2 = keyframes`
 `;
 export const Row = styled.div`
   position: relative;
-  top: -30%;
+  top: -40%;
   width: 100%;
   display: flex;
   padding: 10px 0;
@@ -56,7 +56,7 @@ export const Row = styled.div`
     animation: ${animate1} 100s linear infinite;
     :nth-child(2) {
       animation: ${animate2} 100s linear infinite;
-      animation-delay: -40s;
+      animation-delay: -50s;
     }
   }
 
@@ -65,7 +65,7 @@ export const Row = styled.div`
       animation: ${animate1} 100s linear reverse infinite;
       :nth-child(2) {
         animation: ${animate2} 100s linear reverse infinite;
-        animation-delay: -40s;
+        animation-delay: -50s;
       }
     }
   }

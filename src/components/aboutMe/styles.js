@@ -54,6 +54,7 @@ export const Container = styled.section`
     animation: ${topAnim} 1s;
   }
   @media (min-width: 800px) {
+    width: 60vw;
     h2 {
       text-align: center;
     }

@@ -1,8 +1,9 @@
 import { Cards } from "../cards";
 import { Container, FilterButton } from "./styles";
 import { useEffect, useState } from "react";
-import { api } from "../../services/api";
 import { useTranslation } from "react-i18next";
+import { useProject } from "../../contexts/ProjectsProvider";
+import { Loading } from "../loading";
 
 interface IProject {
   imageLink: string;
@@ -17,22 +18,17 @@ interface IProject {
 
 export const Projects = () => {
   const [projects, setProjects] = useState<IProject[]>([]);
-  const [filteredProjects, setFilteredProjects] = useState<IProject[]>([]);
-  const [filter, setFilter] = useState("x");
+  const [filter, setFilter] = useState(" ");
+  const { data, getProjects, loading } = useProject();
 
   const { t } = useTranslation();
-  useEffect(() => {
-    api
-      .get("projects")
-      .then((res) => setProjects(res.data))
-      .catch((err) => console.log(err));
-  }, []);
 
   useEffect(() => {
-    if (filter !== "") {
-      setFilteredProjects(projects.filter((el) => el.type === filter));
+    getProjects();
+    if (filter === "") {
+      setProjects(data);
     } else {
-      setFilteredProjects(projects);
+      setProjects(data.filter((el) => el.type === filter));
     }
   }, [filter]);
   return (
@@ -53,19 +49,25 @@ export const Projects = () => {
           </FilterButton>
         </div>
 
-        {filteredProjects?.map((el: any) => (
-          <Cards
-            key={`cards-${el.project_id}`}
-            id={el.project_id}
-            projectPicture={el?.imageLink}
-            projectName={el?.name}
-            projectType={el?.type}
-            date={el?.date}
-            link={el?.links}
-            description={el?.description}
-            engines={el?.engines}
-          />
-        ))}
+        <div className='cardContainer'>
+          {loading ? (
+            <Loading />
+          ) : (
+            projects?.map((el: any) => (
+              <Cards
+                key={`cards-${el.project_id}`}
+                id={el.project_id}
+                projectPicture={el?.imageLink}
+                projectName={el?.name}
+                projectType={el?.type}
+                date={el?.date}
+                link={el?.links}
+                description={el?.description}
+                engines={el?.engines}
+              />
+            ))
+          )}
+        </div>
       </Container>
     </>
   );

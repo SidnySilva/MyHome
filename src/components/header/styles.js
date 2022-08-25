@@ -35,6 +35,13 @@ export const Perfil = styled.div`
     font-size: 32px;
     color: white;
     text-overflow: clip;
+    cursor: pointer;
+    transition: 1s;
+    :hover {
+      transition: 0.3s;
+      text-shadow: 0 0 10px cyan;
+      transform: scale(1.2);
+    }
   }
 `;
 export const Figure = styled.figure`

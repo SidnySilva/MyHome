@@ -1,3 +1,4 @@
+import { AxiosRequestConfig } from "axios";
 import {
   ReactNode,
   createContext,
@@ -10,26 +11,22 @@ import { api } from "../services/api";
 interface ProjectProviderProps {
   children: ReactNode;
 }
-interface ProjectsState {
-  imageLink: string;
-  name: string;
-  type: string;
-  description: string;
-  date: string;
-  links: string[];
-  engines: string[];
-}
-interface ProjectsContextData {
-  imageLink: string;
-  name: string;
-  type: string;
-  description: string;
-  date: string;
-  links: string[];
-  engines: string[];
-  getProjects: () => Promise<void>;
-}
 
+interface ProjectsContextData {
+  data: IProject[];
+  getProjects: () => Promise<void>;
+  loading: boolean;
+}
+interface IProject {
+  imageLink: string;
+  name: string;
+  type: string;
+  date: string;
+  description: string[];
+  links: string[];
+  engines: string[];
+  project_id: string;
+}
 const ProjectsContext = createContext<ProjectsContextData>(
   {} as ProjectsContextData,
 );
@@ -42,26 +39,31 @@ export const useProject = () => {
   return context;
 };
 export const ProjectProvider = ({ children }: ProjectProviderProps) => {
-  const [data, setData] = useState<ProjectsState>({} as ProjectsState);
+  const [data, setData] = useState<IProject[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const getProjects = useCallback(async () => {
-    const response = await api.get("projects");
-    const { imageLink, name, type, description, date, links, engines } =
-      response.data;
-    setData({ imageLink, name, type, description, date, links, engines });
+    setLoading(true);
+    const option: AxiosRequestConfig<any> = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `${localStorage.getItem("@MyHome: accessToken")}`,
+      },
+    };
+    await api
+      .get("/projects", option)
+      .then((res) => res.data)
+      .then((data) => {
+        setLoading(false);
+        setData(data.projects);
+      });
   }, []);
-
   return (
     <ProjectsContext.Provider
       value={{
-        imageLink: data.imageLink,
-        name: data.name,
-        type: data.type,
-        description: data.description,
-        date: data.date,
-        links: data.links,
-        engines: data.engines,
+        data: data,
         getProjects,
+        loading,
       }}>
       {children}
     </ProjectsContext.Provider>

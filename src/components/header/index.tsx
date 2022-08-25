@@ -1,8 +1,8 @@
-import { ButtonContainer, Container, Figure, Perfil } from "./styled";
+import { ButtonContainer, Container, Perfil } from "./styles";
 import { Button, ButtonLang, SandwishButton } from "../button";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import ProfileFoto from "../../assets/Eu.jpg";
+import { useNavigate } from "react-router-dom";
 import Br from "../../assets/brazil.png";
 import Us from "../../assets/us.png";
 
@@ -11,7 +11,7 @@ export const Header = () => {
   window.addEventListener(`resize`, () => {
     setWide(window.innerWidth);
   });
-
+  const navidate = useNavigate();
   const { t, i18n } = useTranslation();
 
   const handleClick = (language: string) => {
@@ -19,7 +19,7 @@ export const Header = () => {
   };
   return (
     <Container>
-      <Perfil>
+      <Perfil onClick={() => navidate(`/`)}>
         <h1>My Home</h1>
       </Perfil>
       <ButtonContainer>

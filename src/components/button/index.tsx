@@ -29,7 +29,7 @@ export const SandwishButton = () => {
       <hr></hr>
       <hr></hr>
       <hr></hr>
-      {popup ? <Popup /> : <></>}
+      {popup && <Popup />}
     </SandButton>
   );
 };
