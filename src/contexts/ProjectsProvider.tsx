@@ -1,4 +1,3 @@
-import { AxiosRequestConfig } from "axios";
 import {
   ReactNode,
   createContext,
@@ -44,18 +43,13 @@ export const ProjectProvider = ({ children }: ProjectProviderProps) => {
 
   const getProjects = useCallback(async () => {
     setLoading(true);
-    const option: AxiosRequestConfig<any> = {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `${localStorage.getItem("@MyHome: accessToken")}`,
-      },
-    };
+
     await api
-      .get("/projects", option)
+      .get("projects")
       .then((res) => res.data)
       .then((data) => {
         setLoading(false);
-        setData(data.projects);
+        setData(data);
       });
   }, []);
   return (

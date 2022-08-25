@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { AuthProvider } from "./authContext";
 import { ProjectProvider } from "./ProjectsProvider";
 
 interface AppProviderProps {
@@ -7,9 +6,5 @@ interface AppProviderProps {
 }
 
 export const AppProvider = ({ children }: AppProviderProps) => {
-  return (
-    <AuthProvider>
-      <ProjectProvider>{children}</ProjectProvider>
-    </AuthProvider>
-  );
+  return <ProjectProvider>{children}</ProjectProvider>;
 };
