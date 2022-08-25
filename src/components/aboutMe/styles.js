@@ -74,6 +74,13 @@ export const Container = styled.section`
     }
   }
 `;
+export const Certificate = styled.section`
+  display: flex;
+  justify-content: center;
+  img {
+    width: 80%;
+  }
+`;
 
 export const Cv = styled.section`
   display: flex;

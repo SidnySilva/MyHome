@@ -42,5 +42,8 @@
 
   "Loading": {
     "1": "Loading ..."
+  },
+  "Certificate": {
+    "1": "Certificate"
   }
 }

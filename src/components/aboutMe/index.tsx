@@ -1,14 +1,15 @@
-import { Contact, Container, Cv, Me } from "./styles";
+import { Certificate, Contact, Container, Cv, Me } from "./styles";
 import whats from "../../assets/whats.png";
 import linkedin from "../../assets/linkedin.png";
 import gmail from "../../assets/gmail.png";
 import git from "../../assets/github.png";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-
+import certBR from "../../assets/certipt.png";
+import certEN from "../../assets/certien.png";
 export const AboutMe = () => {
   const [option, setOption] = useState("");
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <Container>
@@ -19,6 +20,12 @@ export const AboutMe = () => {
             setOption("bio");
           }}>
           Bio
+        </button>
+        <button
+          onClick={() => {
+            setOption("cert");
+          }}>
+          {t("Certificate.1")}
         </button>
         <button
           onClick={() => {
@@ -64,6 +71,14 @@ export const AboutMe = () => {
             <p>{t("CvDescription.14")} </p>
           </div>
         </Cv>
+      ) : option === "cert" ? (
+        <Certificate>
+          {i18n.language === "en" ? (
+            <img src={certEN} alt={t("Certificate.1")} />
+          ) : (
+            <img src={certBR} alt={t("Certificate.1")} />
+          )}
+        </Certificate>
       ) : (
         <Me>
           <h2>Bio</h2>
