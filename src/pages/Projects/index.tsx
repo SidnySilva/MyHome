@@ -5,46 +5,28 @@ import { useTranslation } from "react-i18next";
 import { useProject } from "../../contexts/ProjectsProvider";
 import { Loading } from "../../components/loading";
 
-interface IProject {
-  imageLink: string;
-  name: string;
-  type: string;
-  date: string;
-  description: string[];
-  links: string[];
-  engines: string[];
-  project_id: string;
-}
-
 export const Projects = () => {
-  const [projects, setProjects] = useState<IProject[]>([]);
-  const [filter, setFilter] = useState(" ");
   const { data, getProjects, loading } = useProject();
 
   const { t } = useTranslation();
 
   useEffect(() => {
-    getProjects();
-    if (filter === "") {
-      setProjects(data);
-    } else {
-      setProjects(data.filter((el) => el.type === filter));
-    }
-  }, [filter]);
+    getProjects("");
+  }, []);
   return (
     <>
       <Container>
         <div className='buttonHolder'>
-          <FilterButton onClick={() => setFilter("Front-end")}>
+          <FilterButton onClick={() => getProjects("Front-end")}>
             Front-end
           </FilterButton>
-          <FilterButton onClick={() => setFilter("Back-end")}>
+          <FilterButton onClick={() => getProjects("Back-end")}>
             Back-end
           </FilterButton>
-          <FilterButton onClick={() => setFilter("Full-Stack")}>
+          <FilterButton onClick={() => getProjects("Full-Stack")}>
             Full-Stack
           </FilterButton>
-          <FilterButton onClick={() => setFilter("")}>
+          <FilterButton onClick={() => getProjects("")}>
             {t("All.1")}
           </FilterButton>
         </div>
@@ -52,7 +34,7 @@ export const Projects = () => {
           {loading ? (
             <Loading />
           ) : (
-            projects?.map((el: any) => (
+            data?.map((el: any) => (
               <Cards
                 key={`cards-${el.project_id}`}
                 id={el.project_id}

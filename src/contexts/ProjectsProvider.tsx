@@ -4,6 +4,8 @@ import {
   useCallback,
   useContext,
   useState,
+  Dispatch,
+  SetStateAction,
 } from "react";
 import { api } from "../services/api";
 
@@ -13,7 +15,8 @@ interface ProjectProviderProps {
 
 interface ProjectsContextData {
   data: IProject[];
-  getProjects: () => Promise<void>;
+  setData: Dispatch<SetStateAction<IProject[]>>;
+  getProjects: (type: string) => Promise<void>;
   loading: boolean;
 }
 interface IProject {
@@ -41,21 +44,25 @@ export const ProjectProvider = ({ children }: ProjectProviderProps) => {
   const [data, setData] = useState<IProject[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const getProjects = useCallback(async () => {
+  const getProjects = useCallback(async (type: string) => {
     setLoading(true);
-
     await api
       .get("projects")
       .then((res) => res.data)
       .then((data) => {
         setLoading(false);
-        setData(data);
+        if (type) {
+          setData(data.filter((el: any) => el.type === type));
+        } else {
+          setData(data);
+        }
       });
   }, []);
   return (
     <ProjectsContext.Provider
       value={{
         data: data,
+        setData,
         getProjects,
         loading,
       }}>
