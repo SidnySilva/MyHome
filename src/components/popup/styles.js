@@ -5,7 +5,7 @@ const animate = keyframes`
     height: 0;
 }
 100%{
-    height: 30vh;
+    height: 50vh;
     }
 `;
 const opacity = keyframes`
@@ -24,8 +24,8 @@ export const Container = styled.section`
   position: absolute;
   top: 70px;
   right: 0;
-  width: 50vw;
-  height: 30vh;
+  width: 60vw;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,9 +1,9 @@
-import { Cards } from "../cards";
+import { Cards } from "../../components/cards";
 import { Container, FilterButton } from "./styles";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useProject } from "../../contexts/ProjectsProvider";
-import { Loading } from "../loading";
+import { Loading } from "../../components/loading";
 
 interface IProject {
   imageLink: string;
@@ -48,7 +48,6 @@ export const Projects = () => {
             {t("All.1")}
           </FilterButton>
         </div>
-
         <div className='cardContainer'>
           {loading ? (
             <Loading />

@@ -30,6 +30,7 @@ export const Container = styled.section`
   margin-top: 2rem;
   gap: 2rem;
   font-size: 24px;
+  overflow: hidden scroll;
   h1 {
     animation: ${topAnim} 1s;
   }
@@ -55,6 +56,8 @@ export const Container = styled.section`
   }
   @media (min-width: 800px) {
     width: 60vw;
+    overflow: visible visible;
+
     h2 {
       text-align: center;
     }

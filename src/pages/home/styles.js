@@ -16,17 +16,22 @@ export const Container = styled.section`
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   width: 80vw;
   height: 80vh;
   animation: ${animate} 2s;
+  overflow-y: scroll;
+  overflow-x: hidden;
   h1 {
     font-size: 48px;
   }
   p {
     font-size: 20px;
     line-height: 3rem;
+  }
+  @media (min-height: 900px) {
+    justify-content: space-evenly;
   }
   @media (min-width: 1000px) {
     width: 50vw;

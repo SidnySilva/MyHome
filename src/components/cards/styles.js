@@ -35,16 +35,19 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 250px;
+    height: 300px;
     overflow: hidden;
   }
   img {
-    width: 100vw;
+    image-rendering: pixelated;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
   }
   .info {
     width: 100%;
-    height: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,8 +55,11 @@ export const Container = styled.div`
     .desc {
       font-size: 18px;
       width: 80%;
+      overflow-y: scroll;
+      max-height: 60px;
     }
     h1 {
+      font-size: 20px;
       margin: 20px 0 20px 0;
     }
   }
@@ -64,10 +70,7 @@ export const Container = styled.div`
     align-self: flex-end;
     margin: 10px 10px 10px 0;
   }
-  .desc {
-    overflow-y: scroll;
-    max-height: 100px;
-  }
+
   .footer {
     display: flex;
     width: 90%;
@@ -90,7 +93,21 @@ export const Container = styled.div`
       height: 25px;
     }
   }
-
+  @media (min-height: 900px) {
+    .foto {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 250px;
+      overflow: hidden;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: none;
+    }
+  }
   @media (min-width: 1000px) {
     flex-direction: row;
     justify-content: space-between;
@@ -98,6 +115,7 @@ export const Container = styled.div`
     min-height: 50%;
 
     img {
+      object-fit: inherit;
       padding: 0;
       width: 100%;
       height: 100%;

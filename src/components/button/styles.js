@@ -7,7 +7,7 @@ export const Buttons = styled.button`
   background-color: #111;
   color: white;
   transition: 1s;
-
+  width: 100px;
   :hover {
     transition: 0.2s;
     border-color: green;

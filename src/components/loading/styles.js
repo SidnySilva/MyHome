@@ -16,7 +16,7 @@ export const LoadContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 15em;
+  margin-top: 0em;
   p {
     position: absolute;
     color: #fff;
@@ -85,5 +85,8 @@ export const LoadContainer = styled.div`
           0 0 0 20px #e41cf811, 0 0 20px #e41cf8, 0 0 50px #e41cf8;
       }
     }
+  }
+  @media (min-width: 1000px) {
+    margin-top: 15em;
   }
 `;

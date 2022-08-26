@@ -47,11 +47,12 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   height: 100%;
   width: 80vw;
+  overflow: hidden scroll;
   h1 {
-    font-size: 64px;
+    font-size: 48px;
     animation: ${titleAnim} 1s;
   }
   .info {
@@ -72,12 +73,22 @@ export const Container = styled.section`
     color: white;
     transition: 1s;
     animation: ${buttonAnim} 1s;
+    margin: 10px 0;
     a {
       font-size: 24px;
       font-weight: bolder;
       text-decoration: none;
       text-decoration-style: none;
       color: white;
+    }
+  }
+  @media (min-height: 900px) {
+    justify-content: space-between;
+    h1 {
+      font-size: 64px;
+    }
+    button {
+      margin: 0;
     }
   }
   @media (min-width: 800px) {
