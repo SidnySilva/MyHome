@@ -83,7 +83,7 @@ export const Container = styled.section`
     }
   }
   @media (min-height: 900px) {
-    justify-content: space-between;
+    justify-content: space-evenly;
     h1 {
       font-size: 64px;
     }

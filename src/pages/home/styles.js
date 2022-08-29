@@ -30,6 +30,7 @@ export const Container = styled.section`
     font-size: 20px;
     line-height: 3rem;
   }
+
   @media (min-height: 900px) {
     justify-content: space-evenly;
   }

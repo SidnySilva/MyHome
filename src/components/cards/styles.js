@@ -88,6 +88,7 @@ export const Container = styled.div`
     width: 50%;
     gap: 10px;
     img {
+      image-rendering: auto;
       border-radius: 0;
       width: 25px;
       height: 25px;

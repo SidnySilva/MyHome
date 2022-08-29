@@ -1,12 +1,13 @@
 import { Certificate, Contact, Container, Cv, Me } from "./styles";
-import whats from "../../assets/whats.png";
-import linkedin from "../../assets/linkedin.png";
-import gmail from "../../assets/gmail.png";
-import git from "../../assets/github.png";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import git from "../../assets/github.png";
+import whats from "../../assets/whats.png";
+import gmail from "../../assets/gmail.png";
 import certBR from "../../assets/certipt.png";
 import certEN from "../../assets/certien.png";
+import linkedin from "../../assets/linkedin.png";
+
 export const AboutMe = () => {
   const [option, setOption] = useState("");
   const { t, i18n } = useTranslation();

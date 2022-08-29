@@ -31,16 +31,16 @@ export const Container = styled.section`
   align-items: center;
   justify-content: space-evenly;
   transition: 2s;
-  animation: ${animate} 1s;
+  animation: ${animate} 0.5s;
   button {
     :nth-child(1) {
-      animation: ${opacity} 1s;
+      animation: ${opacity} 0.5s;
     }
     :nth-child(2) {
-      animation: ${opacity} 1.5s;
+      animation: ${opacity} 0.8s;
     }
     :nth-child(3) {
-      animation: ${opacity} 2s;
+      animation: ${opacity} 1s;
     }
   }
   div button {
