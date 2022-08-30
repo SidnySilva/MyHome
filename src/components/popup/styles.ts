@@ -54,11 +54,9 @@ export const Container = styled.section`
 const animate2 = keyframes`
 from{
   opacity: 0;
-  transform: rotate(0);
 }
 to{
   opacity: 1;
-  transform: rotate(360deg);
 }
 `;
 
@@ -85,39 +83,43 @@ export const ColorPallete = styled.div`
     border: 1px solid white;
     border-radius: 50%;
     position: absolute;
-    animation: ${animate2} 1s;
     div {
       cursor: pointer;
     }
   }
-
   .default {
     background-color: black;
     top: -0.5rem;
     right: 0.7rem;
+    animation: ${animate2} 0.2s;
   }
   .blue {
     background-color: blue;
     right: -0.6rem;
+    animation: ${animate2} 0.4s;
   }
   .red {
     background-color: red;
     right: -0.6rem;
     top: 1.3rem;
+    animation: ${animate2} 0.6s;
   }
   .yellow {
     background-color: yellow;
     left: 0.7rem;
     bottom: -0.5rem;
+    animation: ${animate2} 0.8s;
   }
   .green {
     background-color: green;
     left: -0.5rem;
     bottom: 0.2rem;
+    animation: ${animate2} 1s;
   }
   .purple {
     background-color: purple;
     top: -0rem;
     left: -0.5rem;
+    animation: ${animate2} 1.2s;
   }
 `;
