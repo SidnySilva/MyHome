@@ -43,15 +43,9 @@ export const Perfil = styled.div`
       transform: scale(1.2);
     }
   }
-`;
-export const Figure = styled.figure`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  z-index: 2;
-  .img {
-    width: 50px;
-    border-radius: 50%;
-    height: 50px;
+  @media (min-width: 2500px) {
+    h1 {
+      font-size: 64px;
+    }
   }
 `;

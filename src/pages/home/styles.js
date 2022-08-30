@@ -45,4 +45,13 @@ export const Container = styled.section`
       line-height: 3rem;
     }
   }
+  @media (min-width: 2500px) {
+    h1 {
+      font-size: 64px;
+    }
+    p {
+      font-size: 42px;
+      line-height: 6rem;
+    }
+  }
 `;

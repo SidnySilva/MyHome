@@ -76,6 +76,15 @@ export const Container = styled.section`
       }
     }
   }
+  @media (min-width: 2500px) {
+    h1 {
+      font-size: 64px;
+    }
+    button {
+      width: 12rem;
+      font-size: 28px;
+    }
+  }
 `;
 export const Certificate = styled.section`
   display: flex;
@@ -113,6 +122,9 @@ export const Cv = styled.section`
     width: 50vw;
     font-size: 24px;
   }
+  @media (min-width: 2500px) {
+    font-size: 36px;
+  }
 `;
 
 export const Me = styled.section`
@@ -147,6 +159,14 @@ export const Me = styled.section`
     width: 50vw;
     p {
       font-size: 24px;
+    }
+  }
+  @media (min-width: 2500px) {
+    font-size: 64px;
+    height: 100%;
+    width: 50vw;
+    p {
+      font-size: 36px;
     }
   }
 `;
@@ -203,5 +223,12 @@ export const Contact = styled.footer`
         width: 100%;
       }
     }
+  }
+  @media (min-width: 2500px) {
+    h2 {
+      font-size: 36px;
+      margin-left: 2rem;
+    }
+    font-size: 36px;
   }
 `;

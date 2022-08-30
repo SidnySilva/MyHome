@@ -69,4 +69,8 @@ export const Row = styled.div`
       }
     }
   }
+  @media (min-width: 2500px) {
+    font-size: 92px;
+    top: -50%;
+  }
 `;

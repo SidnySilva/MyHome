@@ -110,4 +110,20 @@ export const Container = styled.section`
       }
     }
   }
+  @media (min-width: 2500px) {
+    font-size: 32px;
+    h1 {
+      font-size: 72px;
+    }
+    .info {
+      font-size: 42px;
+      line-height: 60px;
+    }
+    button {
+      a {
+        padding: 2rem;
+        font-size: 42px;
+      }
+    }
+  }
 `;

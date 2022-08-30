@@ -128,6 +128,16 @@ export const Container = styled.div`
     }
     .info {
       justify-content: space-evenly;
+      .desc {
+        font-size: 28px;
+        width: 80%;
+        overflow-y: scroll;
+        max-height: 100px;
+      }
+      h1 {
+        font-size: 32px;
+        margin: 20px 0 20px 0;
+      }
     }
     transition: 1s;
     :hover {
@@ -136,6 +146,29 @@ export const Container = styled.div`
     }
     .footer {
       align-items: flex-end;
+    }
+  }
+  @media (min-width: 2500px) {
+    width: 50vw;
+    min-height: 50%;
+    .foto {
+      width: 600px;
+      height: 100%;
+    }
+    .info {
+      font-size: 24px;
+      justify-content: space-evenly;
+    }
+    .footer {
+      align-items: flex-end;
+    }
+    .engines {
+      img {
+        image-rendering: auto;
+        border-radius: 0;
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 `;

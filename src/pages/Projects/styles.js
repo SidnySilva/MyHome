@@ -82,4 +82,8 @@ export const FilterButton = styled.button`
     transform: scale(1.1);
     box-shadow: 0 0 90px cyan;
   }
+  @media (min-width: 2500px) {
+    font-size: 24px;
+    width: 150px;
+  }
 `;
