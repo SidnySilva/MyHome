@@ -69,6 +69,11 @@ export const Row = styled.div`
       }
     }
   }
+  @media (min-width: 1000px) {
+    font-size: 72px;
+    top: -45%;
+  }
+
   @media (min-width: 2500px) {
     font-size: 92px;
     top: -50%;
