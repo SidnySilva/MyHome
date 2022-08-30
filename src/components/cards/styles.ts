@@ -17,11 +17,11 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
-  border: 4px solid black;
+  background-color: ${(props) => props.theme.colors.bgColor};
+  border: 4px solid ${(props) => props.theme.colors.buttonBorder};
   border-radius: 10px;
   gap: 3px;
-  color: white;
+  color: ${(props) => props.theme.colors.text};
   min-width: 300px;
   min-height: 95%;
   max-height: 95%;
@@ -64,7 +64,7 @@ export const Container = styled.div`
     }
   }
   a {
-    color: cyan;
+    color: ${(props) => props.theme.colors.link};
   }
   .data {
     align-self: flex-end;
@@ -142,7 +142,7 @@ export const Container = styled.div`
     transition: 1s;
     :hover {
       transition: 0s;
-      border-color: cyan;
+      border-color: ${(props) => props.theme.colors.buttonHovBorder};
     }
     .footer {
       align-items: flex-end;

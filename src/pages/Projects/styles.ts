@@ -68,19 +68,19 @@ export const Container = styled.section`
 
 export const FilterButton = styled.button`
   border-radius: 10px;
-  border: 2px solid cyan;
+  border: 2px solid ${(props) => props.theme.colors.buttonBorder};
   padding: 10px;
 
-  background-color: #111;
-  color: white;
+  background-color: ${(props) => props.theme.colors.buttonBg};
+  color: ${(props) => props.theme.colors.text};
   transition: 1s;
 
   :hover {
     transition: 0.2s;
-    border-color: green;
+    border-color: ${(props) => props.theme.colors.buttonHovBorder};
     cursor: pointer;
     transform: scale(1.1);
-    box-shadow: 0 0 90px cyan;
+    box-shadow: 0 0 90px ${(props) => props.theme.colors.shadows};
   }
   @media (min-width: 2500px) {
     font-size: 24px;

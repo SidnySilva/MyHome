@@ -4,23 +4,23 @@ export const Container = styled.section`
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: #111;
+  background-color: ${(props) => props.theme.colors.bgColor};
   display: flex;
   flex-direction: column;
   overflow: hidden;
   z-index: 0;
-
+  transition: 1s;
   svg {
     transition: 1s;
     padding: 0 5px;
     user-select: none;
     cursor: default;
-    color: rgba(0, 0, 0, 0.5);
+    color: ${(props) => props.theme.colors.bgIcon};
     background-color: transparent;
     :hover {
       transition: 0s;
-      color: cyan;
-      filter: drop-shadow(0 0 120px cyan);
+      color: ${(props) => props.theme.colors.shadows};
+      filter: drop-shadow(0 0 120px ${(props) => props.theme.colors.shadows});
       background-color: transparent;
     }
   }

@@ -21,32 +21,35 @@ const topAnim = keyframes`
 `;
 export const Container = styled.section`
   z-index: 2;
-  color: white;
+  background-color: rgba(1, 1, 1, 0.7);
+
+  color: ${(props) => props.theme.colors.text};
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 90%;
-  margin-top: 2rem;
+  height: 100%;
+
   gap: 2rem;
   font-size: 24px;
   overflow: hidden scroll;
   h1 {
+    margin-top: 2rem;
     animation: ${topAnim} 1s;
   }
   h2 {
     text-align: center;
   }
   a {
-    color: cyan;
+    color: ${(props) => props.theme.colors.link};
   }
   button {
     border-radius: 10px;
-    border: 2px solid cyan;
+    border: 2px solid ${(props) => props.theme.colors.buttonBorder};
     padding: 10px;
     width: 6rem;
-    background-color: #111;
-    color: white;
+    background-color: ${(props) => props.theme.colors.buttonBg};
+    color: ${(props) => props.theme.colors.text};
   }
   .options {
     display: flex;
@@ -62,7 +65,7 @@ export const Container = styled.section`
       text-align: center;
     }
     a {
-      color: cyan;
+      color: ${(props) => props.theme.colors.link};
     }
     button {
       width: 8rem;
@@ -70,9 +73,9 @@ export const Container = styled.section`
       :hover {
         transition: 0.2s;
         transform: scale(1.3);
-        box-shadow: 0 0 90px cyan;
+        box-shadow: 0 0 90px ${(props) => props.theme.colors.shadows};
         font-weight: bolder;
-        border-color: green;
+        border-color: ${(props) => props.theme.colors.buttonHovBorder};
       }
     }
   }
@@ -173,7 +176,7 @@ export const Me = styled.section`
 
 export const Contact = styled.footer`
   width: 100vw;
-  background-color: black;
+  background-color: ${(props) => props.theme.colors.header};
   padding: 10px;
   border-radius: 10px;
   display: flex;
@@ -195,13 +198,13 @@ export const Contact = styled.footer`
     height: 25px;
   }
   .git {
-    background-color: white;
-    border: 1px solid white;
+    background-color: ${(props) => props.theme.colors.text};
+    border: 1px solid ${(props) => props.theme.colors.text};
     border-radius: 50%;
   }
   .linkedin {
-    background-color: white;
-    border: 1px solid white;
+    background-color: ${(props) => props.theme.colors.text};
+    border: 1px solid ${(props) => props.theme.colors.text};
     border-radius: 5px;
   }
   padding-bottom: 20px;

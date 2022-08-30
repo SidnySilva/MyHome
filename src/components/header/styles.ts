@@ -1,12 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.header`
   z-index: 4;
-  background-color: black;
+  background-color: ${(props) => props.theme.colors.header};
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
   width: 100vw;
+  transition: 1s;
 `;
 
 export const ButtonContainer = styled.div`
@@ -33,13 +34,13 @@ export const Perfil = styled.div`
   h1 {
     margin-left: 20px;
     font-size: 32px;
-    color: white;
+    color: ${(props) => props.theme.colors.text};
     text-overflow: clip;
     cursor: pointer;
     transition: 1s;
     :hover {
       transition: 0.3s;
-      text-shadow: 0 0 10px cyan;
+      text-shadow: 0 0 10px ${(props) => props.theme.colors.shadows};
       transform: scale(1.2);
     }
   }

@@ -43,7 +43,8 @@ to{
 
 export const Container = styled.section`
   z-index: 2;
-  color: white;
+  color: ${(props) => props.theme.colors.text};
+  background-color: rgba(1, 1, 1, 0.7);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,6 +59,7 @@ export const Container = styled.section`
   .info {
     display: flex;
     font-size: 18px;
+    width: 90%;
     flex-direction: column;
     line-height: 40px;
     animation: ${textAnim} 1s;
@@ -69,8 +71,8 @@ export const Container = styled.section`
     border-radius: 10px;
     border: 2px solid cyan;
     padding: 10px;
-    background-color: #111;
-    color: white;
+    background-color: ${(props) => props.theme.colors.buttonBg};
+    color: ${(props) => props.theme.colors.text};
     transition: 1s;
     animation: ${buttonAnim} 1s;
     margin: 10px 0;
@@ -79,7 +81,7 @@ export const Container = styled.section`
       font-weight: bolder;
       text-decoration: none;
       text-decoration-style: none;
-      color: white;
+      color: ${(props) => props.theme.colors.text};
     }
   }
   @media (min-height: 900px) {
@@ -105,8 +107,8 @@ export const Container = styled.section`
         transition: 0.2s;
         transform: scale(1.3);
         box-shadow: 0 0 90px cyan;
-        color: #111;
-        border-color: green;
+        color: ${(props) => props.theme.colors.bgColor};
+        border-color: ${(props) => props.theme.colors.buttonHovBorder};
       }
     }
   }
