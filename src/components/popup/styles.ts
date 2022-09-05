@@ -62,8 +62,8 @@ to{
 
 export const ColorPallete = styled.div`
   margin-left: 2rem;
-  width: 40px;
-  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   position: relative;
   transition: 1s;
   border: 1px solid white;

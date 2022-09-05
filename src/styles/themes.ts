@@ -40,10 +40,10 @@ export const secondTheme = {
 export const thirdTheme = {
   name: "third",
   colors: {
-    header: "#7371FC",
+    header: "#6F1A07",
     bgColor: "#5A2328",
     bgIcon: "#E5D9F2",
-    buttonBg: "#7371FC",
+    buttonBg: "#6F1A07",
     buttonBorder: "#CDC1FF",
     buttonHovBorder: "#3C3744",
     sandwishButton: "#CDC1FF",

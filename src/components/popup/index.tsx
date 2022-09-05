@@ -34,7 +34,7 @@ export const Popup = () => {
 };
 
 export const PopupColors = () => {
-  const { toggleTheme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
   const [popup, setPopup] = useState(false);
 
   const handlePopup = () => {
