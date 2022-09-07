@@ -22,8 +22,8 @@ export const Header = () => {
 
   return (
     <Container>
-      <Perfil onClick={() => navidate(`/`)}>
-        <h1>My Home</h1>
+      <Perfil >
+        <h1 onClick={() => navidate(`/`)}>My Home</h1>
         <PopupColors />
       </Perfil>
       <ButtonContainer>
