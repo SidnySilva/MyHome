@@ -90,10 +90,10 @@ export const LoadContainer = styled.div`
         background-color: ${(props) => props.theme.colors.loadingTrack3};
         border-radius: 50%;
         box-shadow: 0 0 0 5px
-            ${(props) => props.theme.colors.loadingTrack3 + "33"} 0 0 0 10px,
-          ${(props) => props.theme.colors.loadingTrack3 + "22"} 0 0 0 20px,
-          ${(props) => props.theme.colors.loadingTrack3 + "11"} 0 0 20px,
-          ${(props) => props.theme.colors.loadingTrack3},
+            ${(props) => props.theme.colors.loadingTrack3 + "33"}, 
+            0 0 0 10px ${(props) => props.theme.colors.loadingTrack3 + "22"}, 
+          0 0 0 20px ${(props) => props.theme.colors.loadingTrack3 + "11"}, 
+          0 0 20px ${(props) => props.theme.colors.loadingTrack3},
           0 0 50px ${(props) => props.theme.colors.loadingTrack3};
       }
     }
