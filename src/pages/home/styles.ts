@@ -33,7 +33,7 @@ export const Container = styled.section`
     width: 95%;
   }
 
-  @media (min-height: 900px) {
+  @media (min-width: 800px) {
     justify-content: space-evenly;
   }
   @media (min-width: 1000px) {
@@ -48,6 +48,7 @@ export const Container = styled.section`
       width: 90%;
     }
   }
+  
   @media (min-width: 2500px) {
     h1 {
       font-size: 64px;
@@ -57,4 +58,4 @@ export const Container = styled.section`
       line-height: 6rem;
     }
   }
-`;
+  `;

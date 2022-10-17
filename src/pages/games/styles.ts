@@ -85,7 +85,6 @@ export const Container = styled.section`
     }
   }
   @media (min-height: 900px) {
-    justify-content: space-evenly;
     h1 {
       font-size: 64px;
     }
@@ -94,6 +93,7 @@ export const Container = styled.section`
     }
   }
   @media (min-width: 800px) {
+    justify-content: space-evenly;
     height: 100%;
     width: 50vw;
     h1 {

@@ -22,6 +22,7 @@ export const Container = styled.section`
       color: ${(props) => props.theme.colors.shadows};
       filter: drop-shadow(0 0 120px ${(props) => props.theme.colors.shadows});
       background-color: transparent;
+
     }
   }
 `;
