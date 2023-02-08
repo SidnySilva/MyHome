@@ -58,6 +58,7 @@ export const ProjectProvider = ({ children }: ProjectProviderProps) => {
         }
       });
   }, []);
+  
   return (
     <ProjectsContext.Provider
       value={{
