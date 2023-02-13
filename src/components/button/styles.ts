@@ -1,20 +1,33 @@
 import styled from "styled-components";
 
 export const Buttons = styled.button`
-  border-radius: 10px;
-  border: 2px solid ${(props) => props.theme.colors.buttonBorder};
-  padding: 10px;
-  background-color: ${(props) => props.theme.colors.buttonBg};
-  color: ${(props) => props.theme.colors.text};
-  transition: 1s;
-  width: 100px;
-  :hover {
-    transition: 0.2s;
-    border-color: ${(props) => props.theme.colors.buttonHovBorder};
-    cursor: pointer;
-    transform: scale(1.1);
-    box-shadow: 0 0 90px ${(props) => props.theme.colors.shadows};
+border: none;
+background: none;
+  p {
+    position: relative;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+
+    ::before {
+      content: attr(data-text);
+      position: absolute;
+      color: ${(props) => props.theme.colors.shadows};
+      width: 0;
+      overflow: hidden;
+      transition: 1s;
+      -webkit-text-stroke: 1px  ${(props) => props.theme.colors.shadows};
+      text-overflow: hidden;
+    }
+
+    :hover::before {
+      width: 100%;
+      filter: drop-shadow(0 0 25px red);
+    }
   }
+
   @media (min-width: 2500px) {
     font-size: 24px;
     width: 150px;

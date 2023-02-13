@@ -11,9 +11,15 @@ interface ButtonProps {
 export const Button = (children: ButtonProps) => {
   const navigate = useNavigate();
 
+  // return (
+  //   <Buttons onClick={() => navigate(`/${children.page}`)}>
+  //     {children.text}
+  //   </Buttons>
+  // );
+
   return (
     <Buttons onClick={() => navigate(`/${children.page}`)}>
-      {children.text}
+     <p data-text={`${children.text} `}>{children.text}</p>
     </Buttons>
   );
 };
