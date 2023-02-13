@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Buttons = styled.button`
-border: none;
-background: none;
+  border: none;
+  background: none;
   p {
     position: relative;
     text-decoration: none;
@@ -18,7 +18,9 @@ background: none;
       width: 0;
       overflow: hidden;
       transition: 1s;
-      -webkit-text-stroke: 1px  ${(props) => props.theme.colors.shadows};
+      -webkit-text-stroke: 1px ${(props) => props.theme.colors.shadows};
+      border-right: 1px solid ${(props) => props.theme.colors.shadows};
+
       text-overflow: hidden;
     }
 

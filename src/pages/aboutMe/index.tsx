@@ -82,7 +82,6 @@ export const AboutMe = () => {
         </Certificate>
       ) : (
         <Me>
-          <h2>Bio</h2>
           <p>
             {t("BioDescription.1")}
             <> </>

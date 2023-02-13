@@ -141,7 +141,7 @@ export const Container = styled.div`
     }
     transition: 1s;
     :hover {
-      transition: 0s;
+      transition: 1s;
       border-color: ${(props) => props.theme.colors.buttonHovBorder};
     }
     .footer {
