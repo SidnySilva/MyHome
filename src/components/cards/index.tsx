@@ -1,8 +1,4 @@
-import { compareEngines } from "../../utils/engines";
 import { Container } from "./styles";
-import { useTranslation } from "react-i18next";
-import { useState } from "react";
-import { CardPopup } from "../cardsPopup";
 
 interface Infos {
   onClick:()=>void;
@@ -17,8 +13,6 @@ interface Infos {
 }
 
 export const Cards = (project: Infos) => {
-  const engines = compareEngines(project.engines);
-  const { i18n } = useTranslation();
 
   return (
     <Container onClick={project.onClick}

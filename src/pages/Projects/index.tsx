@@ -16,11 +16,9 @@ interface IState {
 }
 
 export const Projects = () => {
-  // const { data, getProjects, loading } = useProject();
 
   const [data, setData] = useState<IState[]>([]);
   const [selectedItem, setSelectedItem] = useState<IState>();
-  //
   const [popup, setPopup] = useState(false);
 
   const handleClick = (item: any) => {
@@ -59,8 +57,8 @@ export const Projects = () => {
         {data.map((el: any) => (
           <Cards
             onClick={() => handleClick(el)}
-            key={`cards-${el.project_id}`}
-            id={el.project_id}
+            key={`cards-${el.name}`}
+            id={el.name}
             projectPicture={el?.imageLink}
             projectName={el?.name}
             projectType={el?.type}

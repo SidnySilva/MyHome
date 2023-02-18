@@ -1,6 +1,5 @@
 import { ButtonContainer, Container, Perfil } from "./styles";
 import { Button, ButtonLang, SandwishButton } from "../button";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import Br from "../../assets/brazil.png";
@@ -8,11 +7,6 @@ import Us from "../../assets/us.png";
 import { PopupColors } from "../popup";
 
 export const Header = () => {
-  const [wide, setWide] = useState(0);
-
-  window.addEventListener(`resize`, () => {
-    setWide(window.innerWidth);
-  });
   const navidate = useNavigate();
   const { t, i18n } = useTranslation();
 

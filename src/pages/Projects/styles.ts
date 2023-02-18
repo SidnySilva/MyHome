@@ -51,11 +51,6 @@ export const Container = styled.section`
     list-style-type: none;
     gap:40px;
     padding: 100px 20px;
-    /* align-items: center;
-    width: 95vw;
-    height: 100%;
-    gap: 2rem;
-    overflow-y: hidden;*/
     overflow-x: scroll; 
   }
   @media (min-width: 1000px) {
@@ -64,11 +59,6 @@ export const Container = styled.section`
     margin: 0;
     width: 70vw;
     max-height: 90vh;
-    /* .cardContainer {
-      flex-direction: column;
-      overflow-y: scroll;
-      overflow-x: hidden;
-    } */
   }
 `;
 
