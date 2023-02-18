@@ -1,9 +1,11 @@
 import { compareEngines } from "../../utils/engines";
 import { Container } from "./styles";
 import { useTranslation } from "react-i18next";
-import { changeDateFormat } from "../../utils/dateFormat";
+import { useState } from "react";
+import { CardPopup } from "../cardsPopup";
 
 interface Infos {
+  onClick:()=>void;
   projectPicture: string;
   projectName: string;
   description: string[];
@@ -19,55 +21,15 @@ export const Cards = (project: Infos) => {
   const { i18n } = useTranslation();
 
   return (
-    <Container key={`card-${project.id}`}>
-      <div className='foto'>
+    <Container onClick={project.onClick}
+      key={`card-${project.id}`}
+    >
+      <span className="base"></span>
+      <span className="title">{project.projectName}</span>
+      <span className="icon">
         <img src={project.projectPicture} alt={`logo ${project.projectName}`} />
-      </div>
-      <div className='info'>
-        <h1>
-          {project.projectName} - {project.projectType}
-        </h1>
-        <p className='desc'>
-          {i18n.language === "pt"
-            ? project.description[0]
-            : project.description[1]}
-        </p>
-        <p className='data'>
-          {i18n.language === "pt"
-            ? project.date
-            : changeDateFormat(project.date)}
-        </p>
-        <div className='footer'>
-          <div className='links'>
-            {project.link.length === 1 ? (
-              <>
-                <p>
-                  <a target='_blank' rel='noreferrer' href={project.link[0]}>
-                    Link Github
-                  </a>
-                </p>
-              </>
-            ) : (
-              <>
-                <p>
-                  <a target='_blank' rel='noreferrer' href={project.link[0]}>
-                    Link Project
-                  </a>
-                  <br />
-                  <a target='_blank' rel='noreferrer' href={project.link[1]}>
-                    Link Github
-                  </a>
-                </p>
-              </>
-            )}
-          </div>
-          <div className='engines'>
-            {engines.map((el, i) => (
-              <img key={`img-${i}`} src={el} alt={`${el} Logo`} />
-            ))}
-          </div>
-        </div>
-      </div>
+      </span>
+      
     </Container>
   );
 };

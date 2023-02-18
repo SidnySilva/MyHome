@@ -45,24 +45,30 @@ export const Container = styled.section`
   }
   .cardContainer {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    gap:40px;
+    padding: 100px 20px;
+    /* align-items: center;
     width: 95vw;
     height: 100%;
     gap: 2rem;
-    overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-y: hidden;*/
+    overflow-x: scroll; 
   }
   @media (min-width: 1000px) {
     flex-direction: column;
     padding: 0;
     margin: 0;
-    width: 60vw;
+    width: 70vw;
     max-height: 90vh;
-    .cardContainer {
+    /* .cardContainer {
       flex-direction: column;
       overflow-y: scroll;
       overflow-x: hidden;
-    }
+    } */
   }
 `;
 

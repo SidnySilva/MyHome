@@ -8,7 +8,7 @@ export const projects = [
     name: "Jojos kenpo",
     type: "Front-end",
     description: [
-      "Projeto escolar - Individual - Um jogo onde enfrentamos Dio Brando em um grande duelo de pedra papel ou tesoura.",
+      "Projeto escolar - Individual - Um jogo onde enfrentamos Dio Brando em um grande duelo de pedra, papel ou tesoura.",
       "School Project - Solo - A game where we face Dio Brando in a great rock-paper-scissors duel.",
     ],
     date: "11/09/2021",
