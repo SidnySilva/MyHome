@@ -20,15 +20,13 @@ export const Container = styled.div`
   justify-content: center;
   position: absolute;
   left: 0;
-
+  z-index: 6;
   .items {
     display: flex;
     position: absolute;
-
-    z-index: 5;
+    z-index: 9;
     flex-direction: column;
     justify-content: center;
-
     align-items: center;
     background-color: ${(props) => props.theme.colors.bgColor};
     border: 4px solid ${(props) => props.theme.colors.buttonBorder};

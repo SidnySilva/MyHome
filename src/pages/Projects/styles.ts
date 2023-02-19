@@ -16,15 +16,12 @@ const animate = keyframes`
 `;
 
 export const Container = styled.section`
-  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 95vw;
   height: 100%;
   gap: 2rem;
-  overflow-y: hidden;
-  overflow-x: scroll;
 
   .buttonHolder {
     margin-top: 2rem;
@@ -47,11 +44,11 @@ export const Container = styled.section`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     list-style-type: none;
     gap:40px;
     padding: 100px 20px;
-    overflow-x: scroll; 
+    overflow-x: scroll;
   }
   @media (min-width: 1000px) {
     flex-direction: column;
@@ -66,7 +63,7 @@ export const FilterButton = styled.button`
   border-radius: 10px;
   border: 2px solid ${(props) => props.theme.colors.buttonBorder};
   padding: 10px;
-
+  z-index: 2;
   background-color: ${(props) => props.theme.colors.buttonBg};
   color: ${(props) => props.theme.colors.text};
   transition: 1s;

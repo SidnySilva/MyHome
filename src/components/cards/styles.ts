@@ -85,10 +85,10 @@ export const Container = styled.li`
     animation: ${wave} 1s ease-in-out infinite;
   }
   .base:hover + .title {
-    transform: rotateY(30deg) skewY(-24deg) translateY(-90px);
-    color: ${(props) => props.theme.colors.buttonBorder};
-    text-shadow: 0 0 3px ${(props) => props.theme.colors.buttonBorder};
-    -webkit-text-stroke: 1px black;
+    transform:  translateY(100px);
+    color: crimson;
+    text-shadow: 0 0 3px crimson;
+    -webkit-text-stroke: 1px violet;
     transition-delay: 0.1s;
     opacity: 1;
     animation: ${wave} 1s ease-in-out infinite;
@@ -96,6 +96,7 @@ export const Container = styled.li`
   .icon{
     z-index: 5;
   }
+
   img{
     border-radius: 50%;
     width: 100%;
